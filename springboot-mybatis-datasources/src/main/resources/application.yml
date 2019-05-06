@@ -1,0 +1,18 @@
+
+spring:
+  datasource:
+    master:
+      jdbc-url: jdbc:mysql://192.168.178.128:3306/test
+      username: root
+      password: adssp@Test123
+      driver-class-name: com.mysql.jdbc.Driver
+    slave1:
+      jdbc-url: jdbc:mysql://192.168.178.129:3306/test
+      username: pig   # 只读账户
+      password: adssp@Test123
+      driver-class-name: com.mysql.jdbc.Driver
+    slave2:
+      jdbc-url: jdbc:mysql://192.168.178.130:3306/test
+      username: pig   # 只读账户
+      password: adssp@Test123
+      driver-class-name: com.mysql.jdbc.Driver

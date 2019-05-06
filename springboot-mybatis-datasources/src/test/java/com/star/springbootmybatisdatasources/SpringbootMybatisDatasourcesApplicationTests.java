@@ -1,0 +1,42 @@
+package com.star.springbootmybatisdatasources;
+
+import com.star.entity.Member;
+import com.star.service.MemberServiceI;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Random;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringbootMybatisDatasourcesApplicationTests {
+
+    @Autowired
+    private MemberServiceI memberService;
+
+   /* @Test
+    public void contextLoads() {
+    }*/
+
+   @Test
+    public void testWrite() {
+        Member member = new Member();
+       Random random = new Random();
+       member.setId(random.nextInt(1000));
+        member.setJob("student");
+        member.setAge(21);
+        member.setUserName("star");
+        member.setPassWord("123");
+        memberService.insert(member);
+    }
+
+    @Test
+    public void testRead(){
+      Member member =  memberService.selectMember(1);
+        System.out.println(member);
+    }
+
+}
